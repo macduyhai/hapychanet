@@ -207,5 +207,5 @@ func main() {
 	router.HandleFunc("/add-device", AddDevice).Methods("POST")
 	router.HandleFunc("/control-device/{stt}", ControDevice).Methods("POST")
 	router.HandleFunc("/get-list-device", GetlistDevice).Methods("GET")
-	log.Fatal(http.ListenAndServe(":8888", router))
+	log.Fatal(http.ListenAndServe(":9999", router))
 }
