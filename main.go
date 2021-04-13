@@ -185,6 +185,9 @@ func ControDevice(w http.ResponseWriter, r *http.Request) {
 	}
 
 }
+func Check(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "pong pong")
+}
 
 func main() {
 	fmt.Println("====> START MAIN <=====")
@@ -203,6 +206,7 @@ func main() {
 	// }
 	fmt.Println("======")
 	router := mux.NewRouter().StrictSlash(true)
+	router.HandleFunc("/ping", Check)
 	router.HandleFunc("/", homeLink)
 	router.HandleFunc("/add-device", AddDevice).Methods("POST")
 	router.HandleFunc("/control-device/{stt}", ControDevice).Methods("POST")
